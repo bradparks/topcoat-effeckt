@@ -52,9 +52,10 @@ var Modals = {
     Modals.modalStyle = "md-effect-" + button.data("modal-type").replace(/[^0-9]/g, '');
 
     Modals.modalWrap.addClass(Modals.modalStyle);
-
     if (button.data("needs-perspective")) {
-      $("html").addClass("md-perspective");
+      setTimeout(function () {
+        $("html").addClass("md-perspective");
+      }, 50);
     }
     if (button.data("hide-class")) {
       Modals.modalWrap.data("hide-class",true);

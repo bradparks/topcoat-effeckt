@@ -83,9 +83,8 @@ function runTests() {
         testName=$(echo $testFileBaseName | cut -d '.' -f 1)
         echo "runAll.sh: Running tests for $testName"
         echo $testFileBaseName
-        ./run_multipage_benchmarks --browser=list
-        ./run_multipage_benchmarks $browserParams loading_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/loading_benchmark_$testName.txt
-        ./run_multipage_benchmarks $browserParams smoothness_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/smoothness_benchmark_$testName.txt
+        ./run_multipage_benchmarks $browserParams loading_benchmark --browser=android-chrome-beta page_sets/$testFileBaseName -o $RESULTS_DIR/loading_benchmark_$testName.txt
+        ./run_multipage_benchmarks $browserParams smoothness_benchmark --browser=android-chrome-beta page_sets/$testFileBaseName -o $RESULTS_DIR/smoothness_benchmark_$testName.txt
     done
     
     cd $currentDir

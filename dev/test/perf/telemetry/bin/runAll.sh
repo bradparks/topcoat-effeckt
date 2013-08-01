@@ -84,8 +84,8 @@ function runTests() {
         testName=$(echo $testFileBaseName | cut -d '.' -f 1)
         echo "runAll.sh: Running tests for $testName"
         echo $testFileBaseName
-        ./run_measurement $browserParams loading page_sets/$testFileBaseName --output-format=csv -o $RESULTS_DIR/loading_benchmark_$testName.txt
-        ./run_measurement $browserParams smoothness page_sets/$testFileBaseName --output-format=csv -o $RESULTS_DIR/smoothness_benchmark_$testName.txt
+        ./run_multipage_benchmarks $browserParams loading_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/loading_benchmark_$testName.txt
+        ./run_multipage_benchmarks $browserParams smoothness_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/smoothness_benchmark_$testName.txt
     done
     
     cd $currentDir

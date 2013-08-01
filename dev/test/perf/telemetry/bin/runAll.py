@@ -67,8 +67,8 @@ class TestHelper():
         if not TestHelper.CHROMIUM_SRC:
             raise RuntimeError("Please set CHROMIUM_SRC env var.")
         
-        if not TestHelper.USE_CEF:
-            raise RuntimeError("Please set USE_CEF env var.")
+        # if not TestHelper.USE_CEF:
+        #     raise RuntimeError("Please set USE_CEF env var.")
         
         if (TestHelper.USE_CEF == 'True') and (not TestHelper.CEF_HOME):
             raise RuntimeError("Please set CEF_HOME if you set USE_CEF to True")
@@ -86,7 +86,7 @@ class TestHelper():
         if p == "Mac":
             if TestHelper.USE_CEF:
                 TestHelper.BROWSER = "exact"
-                TestHelper.BROWSER_EXEC = "%s/app/cefclient.app/Contents/MacOS/cefclient" % TestHelper.CEF_HOME
+                TestHelper.BROWSER_EXEC = "%s/Release/cefclient.app/Contents/MacOS/" % TestHelper.CEF_HOME
         
         if p == "Lin":
             TestHelper.BROWSER = "android-chrome-beta"
@@ -106,7 +106,7 @@ class TestHelper():
     @staticmethod
     def _cleanTelemetryTests():
         print "runAll.py: clean up CHROMIUM_SRC/tools/perf/page_sets/topcoat"
-        path = TestHelper.CHROMIUM_SRC + "tools/perf/page_sets/topcoat"
+        path = TestHelper.CHROMIUM_SRC + "/tools/perf/page_sets/topcoat"
         if os.path.exists(path):
             shutil.rmtree(path)
     
@@ -151,7 +151,7 @@ class TestHelper():
         for rf in result_files:
 			subprocess.check_call([
                              TestHelper.GRUNT,
-                             "telemetry-submit ",
+                             "telemetry-submit",
                              "--path="   + rf,
                              "--device=" + TestHelper.DEVICE_NAME,
                              "--test="   + rf.split(os.sep)[-1][:-6],

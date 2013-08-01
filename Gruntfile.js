@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  var chromiumSrc = process.env.CHROMIUM_SRC || "";
+  var path = require('path');
+
   grunt.initConfig({
     pkg: grunt.file.readJSON( 'package.json' ),
 
@@ -106,6 +109,17 @@ module.exports = function(grunt) {
         files: [
           { expand: true, cwd: './js', src: ['./**/*.*'], dest: 'dist/assets/js' }
         ]
+      },
+      telemetry: {
+        files: [{
+            expand: true,
+            cwd: 'dev/test/perf/telemetry/perf/',
+            src: ['**'],
+            dest: path.join(chromiumSrc, 'tools/perf/')
+        }, {
+            src: ['dist/assets/**'],
+            dest: path.join(chromiumSrc, 'tools/perf/page_sets/topcoat/release/')
+        }]
       }
     }
 
@@ -121,6 +135,13 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['connect', 'watch']);
   grunt.registerTask('demo', ['copy:demo', 'assemble:demo']);
   grunt.registerTask('deploy', ['gh-pages']);
+
+  grunt.loadTasks('dev/tasks');
+
+  grunt.registerTask('telemetry', '', function(platform, theme) {
+    if (chromiumSrc === "") grunt.fail.warn("Set CHROMIUM_SRC to point to the correct location\n");
+    grunt.task.run('check_chromium_src', 'perf:'.concat(platform || 'mobile').concat(':').concat(theme || 'light'), 'copy:telemetry');
+  });
 
   grunt.loadNpmTasks('assemble');
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);

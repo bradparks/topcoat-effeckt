@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Copyright 2012 Adobe Systems Inc.;
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,23 +30,21 @@ function checkEnvVars() {
     if [ -z "$DEVICE_NAME" ] 
     then
         echo "Please set DEVICE_NAME env var (no spaces allowed yet)"
-        read text
-        DEVICE_NAME=$text
+        exit 1
     fi
 
     if [ -z "$CHROMIUM_SRC" ]
     then
         echo "Please set CHROMIUM_SRC env var"
-        read text
-        export CHROMIUM_SRC=$text
-        echo "CHROMIUM_SRC set to $CHROMIUM_SRC"
+        exit 1
     fi
     
     if ($USE_CEF) 
     then
         if [ -z "$CEF_HOME" ] 
         then
-            echo "You need to set CEF_HOME if you set USE_CEF to True"
+            echo "You need to set CEF_HOME if yout set USE_CEF to True"
+            exit 1
         fi
     fi    
 }
@@ -82,8 +80,6 @@ function runTests() {
         testFileBaseName=$(basename $test) #ends with .json
         testName=$(echo $testFileBaseName | cut -d '.' -f 1)
         echo "runAll.sh: Running tests for $testName"
-        echo $testFileBaseName
-        echo "cef home set to $CEF_HOME"
         ./run_multipage_benchmarks $browserParams loading_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/loading_benchmark_$testName.txt
         ./run_multipage_benchmarks $browserParams smoothness_benchmark page_sets/$testFileBaseName -o $RESULTS_DIR/smoothness_benchmark_$testName.txt
     done
@@ -96,8 +92,7 @@ function submitResults() {
 
     for resultFile in $RESULTS_DIR/* 
     do
-        testName=$(basename $resultFile | cut -d '.' -f 1)
-        grunt telemetry-submit --path=$resultFile --device=$DEVICE_NAME --test=$testName
+        grunt telemetry-submit --path=$resultFile --device $DEVICE_NAME   
     done    
 }
 

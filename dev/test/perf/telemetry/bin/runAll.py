@@ -151,7 +151,7 @@ class TestHelper():
         for rf in result_files:
 			subprocess.check_call([
                              TestHelper.GRUNT,
-                             "telemetry-submit:" + git_cwd,
+                             "telemetry-submit ",
                              "--path="   + rf,
                              "--device=" + TestHelper.DEVICE_NAME,
                              "--test="   + rf.split(os.sep)[-1][:-6],

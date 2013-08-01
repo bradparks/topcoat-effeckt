@@ -46,8 +46,7 @@ function checkEnvVars() {
     then
         if [ -z "$CEF_HOME" ] 
         then
-            echo "You need to set CEF_HOME if yout set USE_CEF to True"
-            USE_CEF=false
+            echo "You need to set CEF_HOME if you set USE_CEF to True"
         fi
     fi    
 }

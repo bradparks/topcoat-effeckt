@@ -117,8 +117,8 @@ module.exports = function(grunt) {
             src: ['**'],
             dest: path.join(chromiumSrc, 'tools/perf/')
         }, {
-            src: ['dist/assets/**'],
-            dest: path.join(chromiumSrc, 'tools/perf/page_sets/topcoat/release/')
+            src: ['dist/**'],
+            dest: path.join(chromiumSrc, 'tools/perf/page_sets/Effeckt.css/')
         }]
       }
     }

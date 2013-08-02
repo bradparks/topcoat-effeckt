@@ -5,33 +5,9 @@
         {
             "name": "Buttons",
             "url": "file:///Effeckt.css/dist/buttons.html",
-            "smoothness": [
-                {
-                    "action": "click_element",
-                    "selector": ".expand-right"
-                },
-                {
-                    "action": "click_element",
-                    "selector": ".expand-up"
-                },
-                {
-                    "action": "click_element",
-                    "selector": ".slide-left"
-                },
-                {
-                    "action": "click_element",
-                    "selector": ".slide-up"
-                },
-                {
-                    "action": "click_element",
-                    "selector": ".zoom-out"
-                },
-                {
-                    "action": "wait",
-                    "condition": "duration",
-                    "seconds": 2
-                }
-            ]
+            "smoothness": {
+                "action": "scrolling_action"
+            }
         }
     ]
 }

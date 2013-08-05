@@ -8,27 +8,27 @@
             "smoothness": [
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-grow')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-grow')[0]); }"
                 },
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-curl')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-curl')[0]); }"
                 },
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-wave')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-wave')[0]); }"
                 },
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fan')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-fan')[0]); }"
                 },
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fade')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-fade')[0]); }"
                 },
                 {
                     "action": "scrolling_action",
-                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fly')); }"
+                    "scrollable_element_function": "function(callback) { callback(document.getElementsByClassName('list-fly')[0]); }"
                 }
             ]
         }

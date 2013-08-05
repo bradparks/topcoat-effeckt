@@ -1,0 +1,37 @@
+{
+    "description": "Effeckt.css",
+    "user_agent_type": "desktop",
+    "pages": [
+        {
+            "name": "Buttons",
+            "url": "file:///Effeckt.css/dist/list-scroll.html",
+            "smoothness": [
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-grow')); }"
+                },
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-curl')); }"
+                },
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-wave')); }"
+                },
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fan')); }"
+                },
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fade')); }"
+                },
+                {
+                    "action": "scrolling_action",
+                    "scrollable_element_function": "function(callback) { callback(document.querySelector('.list-fly')); }"
+                }
+            ]
+        }
+    ]
+}
+

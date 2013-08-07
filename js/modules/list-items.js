@@ -26,7 +26,7 @@ var ListItems = {
 
     $("<li />", {
       'text': "new item",
-      'class': "new-item"
+      'class': "topcoat-list__item new-item"
     }).insertAfter(insertPoint);
 
   },

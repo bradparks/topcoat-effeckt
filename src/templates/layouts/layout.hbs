@@ -17,13 +17,26 @@
     <!-- Individual module CSS files here -->
     <!-- Should we combine or not combine? -->
     <link rel="stylesheet" href="{{assets}}/css/effeckt.autoprefixed.css">
-
     <link rel="stylesheet" href="{{assets}}/css/demo/topcoat-mobile-dark.autoprefixed.css">
 </head>
 
 <body>
 
-  {{>body}}
+  {{> off-screen-nav}}
+
+  {{> page-transition}}
+
+  {{> modal}}
+
+  <div class="page-wrap no-transitions" id="page-wrap">
+
+    {{>body}}
+
+    {{> off-screen-nav-cover}}
+
+
+  </div><!-- div.page-wrap -->
+
 
   <!-- libs -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

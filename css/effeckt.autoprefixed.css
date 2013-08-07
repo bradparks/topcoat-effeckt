@@ -660,19 +660,19 @@
 
 @-webkit-keyframes openSpace {
   to {
-    max-height: 50px;
+    max-height: 100px;
   }
 }
 
 @-o-keyframes openSpace {
   to {
-    max-height: 50px;
+    max-height: 100px;
   }
 }
 
 @keyframes openSpace {
   to {
-    max-height: 50px;
+    max-height: 100px;
   }
 }
 
@@ -778,7 +778,7 @@
 
 @-webkit-keyframes growHeight {
   to {
-    max-height: 50px;
+    max-height: 100px;
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -787,7 +787,7 @@
 
 @-o-keyframes growHeight {
   to {
-    max-height: 50px;
+    max-height: 100px;
     opacity: 1;
     -o-transform: scale(1);
     transform: scale(1);
@@ -796,7 +796,7 @@
 
 @keyframes growHeight {
   to {
-    max-height: 50px;
+    max-height: 100px;
     opacity: 1;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);

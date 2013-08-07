@@ -23,7 +23,7 @@
 }
 @keyframes openSpace {
   to {
-    max-height: 50px;
+    max-height: 100px;
   }
 }
 @keyframes moveIn {
@@ -61,7 +61,7 @@
 @keyframes growHeight {
   to {
     // max-height kinda janky way to do this
-    max-height: 50px;
+    max-height: 100px;
     opacity: 1;
     transform: scale(1);
   }

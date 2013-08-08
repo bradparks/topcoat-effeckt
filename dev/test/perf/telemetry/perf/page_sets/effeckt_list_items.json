@@ -3,7 +3,7 @@
     "user_agent_type": "desktop",
     "pages": [
         {
-            "name": "Buttons",
+            "name": "List items",
             "url": "file:///Effeckt.css/dist/list-items.html",
             "smoothness": {
                 "action": "scrolling_action"
